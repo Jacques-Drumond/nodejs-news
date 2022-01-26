@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js News</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <a id="a-top" href="/"><div class="header__logo">Node.Js News</div></a>
+      <div class="header__search">
+
+        <form action="/" method="POST">
+            <input type="text" name="search" placeholder="Search for news" required>
+            <input type="submit" value="search">
+        </form>
+
+      </div>
+    </header>
+    <div class="wrapper">
+      <div class="news-single">
+          <a href="/">&larr;- Back</a>
+          <% if(article != null) { %>
+            <img src="<%- article.thumbnail_url %>" alt="<%- article.title.rendered %>">
+          <h2><%- article.title.rendered %></h2>
+          <p><%- article.content.rendered %></p>
+        <% } else { %>
+            No posts found x.x
+            <% } %>
+      </div>
+    </div>
+  </body>
+</html>
